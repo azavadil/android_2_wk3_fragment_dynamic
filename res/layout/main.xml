@@ -4,6 +4,16 @@
     android:baselineAligned="false"
     android:orientation="horizontal" >
 
+    <!-- 
+    In this example we're dynamically adding and removing fragments.
+    we use the same linear layout with two FrameLayouts that reserve
+    space for use to add and remove items
+    
+    
+    
+    
+     -->
+    
     <FrameLayout
         android:id="@+id/title_fragment_container"
         android:layout_width="match_parent"

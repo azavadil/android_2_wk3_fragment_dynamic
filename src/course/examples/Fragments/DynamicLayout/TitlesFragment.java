@@ -13,6 +13,7 @@ import android.widget.ListView;
 public class TitlesFragment extends ListFragment {
 	private static final String TAG = "TitlesFragment";
 	private ListSelectionListener mListener = null;
+	private int mCurrIdx;
 
 	public interface ListSelectionListener {
 		public void onListSelection(int index);
@@ -37,10 +38,22 @@ public class TitlesFragment extends ListFragment {
 		}
 	}
 
+	
+	// This is the code where we handle configuration changes
+	// 
+	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		Log.i(TAG, getClass().getSimpleName() + ":entered onCreate()");
 		super.onCreate(savedInstanceState);
+		
+		// this means that when configuration changes occur 
+		// android will not kill this fragment. 
+		// Instead android will detach the fragment and retain
+		// the state
+		
+		setRetainInstance(true);
 	}
 
 	@Override
@@ -59,6 +72,15 @@ public class TitlesFragment extends ListFragment {
 		setListAdapter(new ArrayAdapter<String>(getActivity(),
 				R.layout.title_item, QuoteViewerActivity.mTitleArray));
 		getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		
+		// if this is true it means the user has previously selected a title
+		// so this call to onActivityCreated is probably occuring because of a 
+		// configuration change
+		// so we want to make sure the currIdx remains checked
+		
+		if(-1 != mCurrIdx)
+			getListView().setItemChecked(mCurrIdx, true); 
+		
 	}
 
 	@Override
