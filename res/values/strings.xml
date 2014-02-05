@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FragmentProgrammaticLayout</string>
+    <string name="app_name">FragmentDynamicLayout</string>
     <string-array name="Titles">
-        <item>Hamlet</item>
+        <item>The Tragedy of Hamlet, Prince of Denmark</item>
         <item>King Lear</item>
         <item>Julius Ceasar</item>
     </string-array>

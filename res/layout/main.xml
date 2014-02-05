@@ -1,35 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activityFrame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="false"
     android:orientation="horizontal" >
 
-    <!--  
-    This is an example where we are programatically adding fragments to our 
-    views. 
-    The LinearLayout has 2 subviews. 
-    Instead of the 2 subviews being fragments (what we had in the static example)
-    the subviews are FrameLayouts.
-    FrameLayout essentially reserves some space in the layout and we'll fill the 
-    space later when we add the fragments to this activity
-    
-     -->
-    
-    
-    
     <FrameLayout
-        android:id="@+id/title_frame"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" >
-    </FrameLayout>
+        android:id="@+id/title_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <FrameLayout
-        android:id="@+id/quote_frame"
+        android:id="@+id/quote_fragment_container"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2" >
-    </FrameLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

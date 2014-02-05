@@ -19,8 +19,19 @@ public class QuoteViewerActivity extends Activity implements ListSelectionListen
 		mTitleArray = getResources().getStringArray(R.array.Titles);
 		mQuoteArray = getResources().getStringArray(R.array.Quotes);
 		
+		
+		// call to setContentView
 		setContentView(R.layout.main);
 
+		// here's where we add the fragment
+		// 4 steps
+		// 1. Get a reference to the fragmentManager
+		// 2. call begin transaction method on the fragment manager, returns a fragment transaction
+		// 3. call the add method of the fragment transaction passing in an id for the framelayout and a 
+		//      fragment that that view will hold (for both title and quote fragment)
+		// 4. call commit .method() on fragment transaction. 
+	
+		
 		FragmentManager fragmentManager = getFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager
 				.beginTransaction();
